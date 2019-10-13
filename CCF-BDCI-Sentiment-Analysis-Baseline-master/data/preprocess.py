@@ -1,3 +1,4 @@
+# coding=utf-8
 import pandas as pd
 import os
 import random
@@ -29,7 +30,7 @@ for i in range(5):
     index=index-set(tmp)
     print("Number:",len(tmp))
     K_fold.append(tmp)
-    
+
 
 for i in range(5):
     print("Fold",i)
