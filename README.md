@@ -33,3 +33,13 @@
 ### 07/10/2019
 
 第二次小组讨论。本周任务是跑一下baseline的代码，有时间的话看看各部分内容。下次小组讨论在14/10.
+
+可能有用的链接：
+
+baseline分享 ： https://discussion.datafountain.cn/questions/1903?newAnswer=true
+
+CCF-BDCI-Sentiment-Analysis-Baseline ： https://github.com/guoday/CCF-BDCI-Sentiment-Analysis-Baseline
+
+Sentiment-analysis ： https://github.com/unclegem/Sentiment-analysis/blob/master/explore.ipynb
+
+transformers ： https://github.com/huggingface/transformers
