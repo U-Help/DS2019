@@ -57,14 +57,24 @@ def content_filter(string):
         train_df['title'] = train_df['title'][:max_content_len]
     return string
 
-train_df=pd.read_csv("Train_DataSet_Clean.csv")
-train_label_df=pd.read_csv("Train_DataSet_Label_Clean.csv")
-test_df=pd.read_csv("Test_DataSet.csv")
+#train_df=pd.read_csv("Train_DataSet_Clean.csv")
+#train_label_df=pd.read_csv("Train_DataSet_Label_Clean.csv")
+#test_df=pd.read_csv("Test_DataSet.csv")
+#
+#train_df['title'] = train_df['title'].apply(title_filter);
+#train_df['content'] = train_df['content'].apply(content_filter);
+#
+#test_df['title'] = test_df['title'].apply(title_filter);
+#test_df['content'] = test_df['content'].apply(content_filter);
 
-train_df['title'] = train_df['title'].apply(title_filter);
-train_df['content'] = train_df['content'].apply(content_filter);
+df = pd.DataFrame([
+    [-0.532681, '测试', 0],
+    [1.490752, '英特尔新cpu微架构ocean cove曝光', 1],
+    [-1.387326, 'foo', 2],
+    [0.814772, 'baz', ' '],     
+    [-0.222552, '   ', 4],
+    [-1.176781,  'qux', '  '],         
+], columns='A B C'.split(), index=pd.date_range('2000-01-01','2000-01-06'))
 
-test_df['title'] = test_df['title'].apply(title_filter);
-test_df['content'] = test_df['content'].apply(content_filter);
-
-    
+print(df.replace(r'\s+', np.nan, regex=True))   
+print(df) 
