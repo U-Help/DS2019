@@ -21,6 +21,9 @@ def title_filter(string):
     
     if len(string) > max_title_len:
         string = string[:max_title_len]
+    if len(string) == 0:
+        string = '无'
+        
     return string
 
 def content_filter(string):
@@ -34,8 +37,11 @@ def content_filter(string):
     string = char_filt_in.sub(r'', string)
     string = date_filt_out.sub(r'', string)
     
-    if len(string) > max_content_len:
-        string = string[:max_content_len]
+    if len(string) > max_title_len:
+        string = string[:max_title_len]
+    if len(string) == 0:
+        string = '无'
+        
     return string
 
 # read file
@@ -54,11 +60,6 @@ train_df['label']=train_df['label'].astype(int)
 test_df['label']=0
 
 # fill data with '无' whose content/title is nan
-test_df.title.replace(r'\s+', np.nan, regex=True)
-test_df.content.replace(r'\s+', np.nan, regex=True)
-train_df.title.replace(r'\s+', np.nan, regex=True)
-train_df.content.replace(r'\s+', np.nan, regex=True)
-
 test_df['content']=test_df['content'].fillna('无')
 train_df['content']=train_df['content'].fillna('无')
 test_df['title']=test_df['title'].fillna('无')
@@ -71,16 +72,16 @@ train_df['content'] = train_df['content'].apply(content_filter);
 test_df['title'] = test_df['title'].apply(title_filter);
 test_df['content'] = test_df['content'].apply(content_filter);
 
-# fill data with '无' whose content/title is nan again
-test_df.title.replace(r'\s+', np.nan, regex=True)
-test_df.content.replace(r'\s+', np.nan, regex=True)
-train_df.title.replace(r'\s+', np.nan, regex=True)
-train_df.content.replace(r'\s+', np.nan, regex=True)
-
-test_df['content']=test_df['content'].fillna('无')
-train_df['content']=train_df['content'].fillna('无')
-test_df['title']=test_df['title'].fillna('无')
-train_df['title']=train_df['title'].fillna('无')
+## fill data with '无' whose content/title is nan again
+#test_df.title = test_df.title.replace(r'\s+', np.nan, regex=True)
+#test_df.content = test_df.content.replace(r'\s+', np.nan, regex=True)
+#train_df.title = train_df.title.replace(r'\s+', np.nan, regex=True)
+#train_df.content = train_df.content.replace(r'\s+', np.nan, regex=True)
+#
+#test_df['content']=test_df['content'].fillna('无')
+#train_df['content']=train_df['content'].fillna('无')
+#test_df['title']=test_df['title'].fillna('无')
+#train_df['title']=train_df['title'].fillna('无')
 
 # divide data
 
