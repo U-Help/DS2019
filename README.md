@@ -23,7 +23,7 @@
 * 2019/11/12-2019/11/22 作品提交截止，决赛入围资格审核 Closing of submission, qualification review for final round
 
 * 2019/11/23-2019/11/24 大赛决赛，答辩评审及颁奖典礼 the finals; debate judging and award presentation ceremony
-
+<!--
 ## 任务分配
 
 ### 23/09/2019
@@ -43,3 +43,4 @@ CCF-BDCI-Sentiment-Analysis-Baseline ： https://github.com/guoday/CCF-BDCI-Sent
 Sentiment-analysis ： https://github.com/unclegem/Sentiment-analysis/blob/master/explore.ipynb
 
 transformers ： https://github.com/huggingface/transformers
+-->
